@@ -1,11 +1,13 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 public class PlayerInstaller : MonoInstaller
 {
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private PlayerInputManager _playerInputManager;
+    [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private CinemachineCamera _playerCamera;
     [SerializeField] private Health _playerHealth;
 
@@ -14,6 +16,7 @@ public class PlayerInstaller : MonoInstaller
         Container.Bind<Transform>().WithId("PlayerTransform").FromInstance(_playerTransform).AsCached();
         Container.Bind<CinemachineCamera>().WithId("PlayerFPCamera").FromInstance(_playerCamera).AsSingle();
         Container.Bind<PlayerInputManager>().FromInstance(_playerInputManager).AsSingle();
+        Container.Bind<PlayerInput>().FromInstance(_playerInput).AsSingle();
         Container.Bind<Health>().FromInstance(_playerHealth).AsSingle();
     }
 }
