@@ -6,6 +6,11 @@ TagManager:
   tags:
   - ship
   - asteroid
+  - GasTank
+  - Target
+  - Concrete
+  - Metal
+  - ExplosiveBarrel
   layers:
   - Default
   - TransparentFX
@@ -13,7 +18,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Weapon
   - 
   - 
   - 
